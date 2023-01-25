@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Header from './Components/Header';
+import Footer from './Components/Footer';
 import GalaxyBackground from './GalaxyBackground'
 
 function App() {
@@ -23,9 +25,12 @@ function App() {
     </div>
   );  */
   return (
-    <GalaxyBackground starCount={500} rotationSpeed={.2}>
+
       <div className="App">
-        <header className="App-header">
+        <Header />
+{/*++++++ */ }
+{ /* <GalaxyBackground starCount={1000} rotationSpeed={.2}>
+      { /*  <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <a
             className="App-link"
@@ -33,11 +38,13 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Alex Testa
           </a>
         </header>
+</GalaxyBackground> */ }
+        <Footer />
       </div>
-    </GalaxyBackground>
+
   );
 }
 
