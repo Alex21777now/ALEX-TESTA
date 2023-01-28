@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 
-export default class Layout_4 extends Component {
-  render() {
+export default function Layout_4() {
+
+  const [title, setTitle] = React.useState(<img src="./img/marks/BahamaBlue.jpg" alt="BahamaBlue" width="36" height="36" />);
+  const [body, setBody] = React.useState('');
+  const [author, setAuthor] = React.useState('');
+
       return (
         <div>
         <div className="constructor-page">
@@ -59,7 +63,9 @@ export default class Layout_4 extends Component {
                                 <div className="cb-result__data">
                                     <span>Отпечатки:</span>
                                     <strong>Не выбраны</strong>
-
+                                    <div>{title}</div>
+                                    <div>{body}</div>
+                                    <div>{author}</div>
                                 </div>
                                 <div className="cb-result__object">
                                     <div className="cb-result__img">
@@ -75,8 +81,10 @@ export default class Layout_4 extends Component {
                             </div>
                             <div className="cb-result__bottom">
                                 <form action="" method="POST">
-                                    <button className="cb-next">Далее</button>
+                                <a className="cb-next" href="/">Далее
+                                    {/*<button className="cb-next">Далее</button>*/}
                                     {/*<input name="result" id="" type="text" hidden="" />*/}
+                                </a>
                                 </form>
                             </div>
                         </div>
@@ -304,7 +312,9 @@ export default class Layout_4 extends Component {
 
                                     <div className="cb-item-marks">
                                         <div className="cb-item-mark">
-                                            <input id="mark0" type="checkbox" />
+                                            <input id="mark0" type="checkbox" required
+                                            value={title}
+                                            onChange={(e) => setTitle(e.target.value)} />
                                             <label for="mark0" title="BahamaBlue"></label>
                                             <img src="./img/marks/BahamaBlue.jpg" alt="BahamaBlue" width="136" height="136" />
                                         </div>
@@ -371,5 +381,5 @@ export default class Layout_4 extends Component {
         </div>
         </div>
       )
-   }
+
 }

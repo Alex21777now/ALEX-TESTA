@@ -4,6 +4,7 @@ import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import GalaxyBackground from './GalaxyBackground'
+import Create  from './Components/Create';
 
 function App() {
 /*  return (
@@ -42,6 +43,8 @@ function App() {
           </a>
         </header>
 </GalaxyBackground> */ }
+    { /*    <Create />  */ }
+
         <Footer />
       </div>
 

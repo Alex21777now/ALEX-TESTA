@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
+import  Create  from '../Components/Create';
 
-export default class Layout_3 extends Component {
-  render() {
+export default function Layout_3() {
+
+  const [title, setTitle] = React.useState('');
+  const [body, setBody] = React.useState('');
+  const [author, setAuthor] = React.useState('');
+
       return (
         <div>
         <div className="constructor-page">
@@ -68,15 +73,17 @@ export default class Layout_3 extends Component {
                                     <div className="cb-result__border">
 
                                     </div>
-                                    <p className="cb-result__text__title ariston">111</p>
-                                    <p className="cb-result__text__name ariston">222</p>
-                                    <p className="cb-result__text__date ariston">333</p>
+                                    <p className="cb-result__text__title ariston">{title}</p>
+                                    <p className="cb-result__text__name ariston">{body}</p>
+                                    <p className="cb-result__text__date ariston">{author}</p>
                                 </div>
                             </div>
                             <div className="cb-result__bottom">
                                 <form action="" method="POST">
-                                    <button className="cb-next">Далее</button>
+                                <a className="cb-next" href="/blog">Далее
+                                    {/*<button className="cb-next">Далее</button>*/}
                                     {/*<input name="result" id="" type="text" hidden="" />*/}
+                                </a>
                                 </form>
                             </div>
                         </div>
@@ -266,16 +273,22 @@ export default class Layout_3 extends Component {
                                         подарке.
                                     </p>
                                     <div className="cb-item__line">
-                                        <input id="pic-title" placeholder="Наша Свадьба" maxlength="22" type="text" />
+                                        <input id="pic-title" placeholder="Наша Свадьба" maxlength="22" type="text" required
+                                        value={title}
+                                        onChange={(e) => setTitle(e.target.value)} />
                                         <span>Заголовок картины</span>
 
                                     </div>
                                     <div className="cb-item__line">
-                                        <input id="pic-name" placeholder="Анастасия и Константин" maxlength="36" type="text" />
+                                        <input id="pic-name" placeholder="Анастасия и Константин" maxlength="36" type="text" required
+                                        value={body}
+                                        onChange={(e) => setBody(e.target.value)} />
                                         <span>Подпись</span>
                                     </div>
                                     <div className="cb-item__line">
-                                        <input id="pic-date" placeholder="29 июля 2015" maxlength="26" type="text" />
+                                        <input id="pic-date" placeholder="29 июля 2015" maxlength="26" type="text" required
+                                        value={author}
+                                        onChange={(e) => setAuthor(e.target.value)} />
                                         <span>Дата события</span>
                                     </div>
                                     <div className="cb-item__line--btns">
@@ -380,5 +393,5 @@ export default class Layout_3 extends Component {
         </div>
         </div>
       )
-   }
+
 }

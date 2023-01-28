@@ -87,8 +87,10 @@ export default function Layout_2() {
                             </div>
                             <div className="cb-result__bottom">
                                 <form action="" method="POST">
-                                    <button className="cb-next">Далее</button>
+                                <a className="cb-next" href="/contacts">Далее
+                                    {/*<button className="cb-next">Далее</button>*/}
                                     {/*<input name="result" id="" type="text" hidden="" />*/}
+                                </a>
                                 </form>
                             </div>
                         </div>
